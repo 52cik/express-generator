@@ -14,13 +14,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '{views}');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
 if (app.get('env') === 'development') {
   app.use(logger('dev'));
 }
 
+// uncomment after placing your favicon in /public
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());{css}
@@ -35,6 +34,8 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// error handlers
 
 // development error handler
 // will print stacktrace
@@ -57,5 +58,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 module.exports = app;
