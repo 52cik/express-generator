@@ -65,7 +65,7 @@ describe('express(1)', function () {
         + '  "version": "0.0.0",\n'
         + '  "private": true,\n'
         + '  "scripts": {\n'
-        + '    "dev": "DEBUG=express(1)-(no-args):* NODE_ENV=development node bin/www",\n'
+        + '    "dev": "cross-env DEBUG=express(1)-(no-args):* NODE_ENV=development node bin/www",\n'
         + '    "start": "node bin/www"\n'
         + '  },\n'
         + '  "dependencies": {\n'
@@ -76,6 +76,9 @@ describe('express(1)', function () {
         + '    "jade": "~1.11.0",\n'
         + '    "morgan": "~1.7.0",\n'
         + '    "serve-favicon": "~2.3.0"\n'
+        + '  },\n'
+        + '  "devDependencies": {\n'
+        + '    "cross-env": "^3.1.3"\n'
         + '  }\n'
         + '}\n');
     });

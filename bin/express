@@ -240,7 +240,7 @@ function createApplication(app_name, path) {
         name: app_name
       , version: '0.0.0'
       , private: true
-      , scripts: { dev: 'DEBUG=' + app_name + ':* NODE_ENV=development node bin/www', start: 'node bin/www' }
+      , scripts: { dev: 'cross-env DEBUG=' + app_name + ':* NODE_ENV=development node bin/www', start: 'node bin/www' }
       , dependencies: {
           'express': '~4.14.0',
           'body-parser': '~1.15.2',
@@ -248,6 +248,9 @@ function createApplication(app_name, path) {
           'debug': '~2.2.0',
           'morgan': '~1.7.0',
           'serve-favicon': '~2.3.0'
+      }
+      , devDependencies: {
+          'cross-env': '^3.1.3'
       }
     }
 
