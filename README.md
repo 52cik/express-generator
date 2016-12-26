@@ -6,6 +6,14 @@
 
 **已添加单元测试，确保项目正常运行**
 
+## 安装
+
+```sh
+$ npm install -g 52cik/express-generator
+```
+
+**使用方法完全一样**
+
 ------
 
 [![Express Logo](https://i.cloudup.com/zfY6lL7eFa-3000x3000.png)](http://expressjs.com/)
