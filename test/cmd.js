@@ -389,6 +389,24 @@ describe('express(1)', function () {
     });
   });
 
+  describe('--ipv4', function () {
+    var ctx = setupTestEnvironment(this.fullTitle());
+
+    it('should create with IPv4', function (done) {
+      run(ctx.dir, ['-4'], function (err, output) {
+        if (err) return done(err);
+        assert.equal(parseCreatedFiles(output, ctx.dir).length, 17);
+        done();
+      })
+    });
+
+    it('should start with IPv4', function () {
+      var file = path.resolve(ctx.dir, 'bin/www');
+      var contents = fs.readFileSync(file, 'utf8');
+      assert.ok(contents.indexOf('0.0.0.0') > -1);
+    });
+  });
+
   describe('--hbs', function () {
     var ctx = setupTestEnvironment(this.fullTitle())
 
